@@ -11,7 +11,8 @@ router.post('/tasks', authmw, async (req, res)=> {
 
     try {
         await task.save()
-        res.send(task)
+        res.status(201).send(task)
+
     } catch(e) {
         res.status(400).send(e)
     }
